@@ -3,7 +3,7 @@
 namespace Kohana\Log;
 
 use \Kohana_Exception as Kohana_Exception;
-use \Debug as Debug;
+use \Text as Text;
 use \Log_Writer as Log_Writer;
 
 /**
@@ -36,7 +36,7 @@ class File extends Log_Writer
     {
         if (!is_dir($directory) OR !is_writable($directory)) {
             throw new Kohana_Exception('Directory :dir must be writable',
-                array(':dir' => Debug::path($directory)));
+                array(':dir' => Text::file_path($directory)));
         }
 
         // Determine the directory path

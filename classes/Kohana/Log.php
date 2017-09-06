@@ -173,7 +173,7 @@ class Log {
 			'additional' => $additional,
 		);
 
-		if (Log::$write_on_add)
+		if (static::$write_on_add)
 		{
 			// Write logs as they are added
 			$this->write();
